@@ -64,14 +64,38 @@ the budget is going to thinking. `REASONING_EFFORT` is recorded in
 `_run.json` alongside provider and model so the setting behind any number is
 recoverable.
 
-## Usage, and why a free tier is enough
+## Usage, and what a free tier actually covers
 
-One run is **12 requests** — one per case, since the baseline makes a single
-call per case. A full project (baseline plus agent, plus a smoke test or two)
-is roughly **60 requests**. That is comfortably inside every free tier listed
-above. The limits that bite are per-minute, not per-day: `OpenAICompatClient`
-waits 8s, 16s, 24s… on a 429 precisely because free tiers throttle by requests
-per minute, so a run may be slow but should not fail.
+A baseline run is **12 requests**, one per case. `agent-v1` is two-pass, so it
+is **24 requests** per run. A baseline plus one agent iteration is therefore
+**36 requests**, not the ~24 a one-call-per-case design would suggest. Every
+later iteration that adds a pass adds another 12.
+
+**Measured on 2026-08-30, this does not fit Gemini's free tier.** The limit is
+per model, per day:
+
+```
+quotaId:     GenerateRequestsPerDayPerProjectPerModel-FreeTier
+quotaMetric: generativelanguage.googleapis.com/generate_content_free_tier_requests
+model:       gemini-3.6-flash
+quotaValue:  20
+```
+
+Twenty requests per day. A baseline run fits with eight to spare. **A single
+`agent-v1` run does not fit at all** — 24 requests cannot complete in one day
+on one model, no matter how the retries are paced. Attempting it produces
+exactly one scored case and eleven `429` failures.
+
+Two traps in that error worth knowing. The 429 body carries
+`"Please retry in 20.564s"` and a `RetryInfo` of `20s`, which reads like a
+per-minute throttle and is not: the underlying quota is daily, so backing off
+and retrying only burns more of it. And the quota is per *model*, so switching
+between Gemini models gives each its own separate daily allowance — while
+breaking the fairness rule below.
+
+If you need a full baseline-plus-agent comparison in one sitting, use a
+provider whose free daily allowance covers 36 requests, or pay for one. On
+Anthropic, 36 requests is cents.
 
 ## Fairness rule
 

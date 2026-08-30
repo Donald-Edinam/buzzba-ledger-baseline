@@ -1,0 +1,88 @@
+{
+  "runner": "agent-v1",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+  "reasoningEffort": "low",
+  "wallMs": 1042692,
+  "inputTokens": 1811,
+  "outputTokens": 365,
+  "cases": [
+    {
+      "caseId": "case-01",
+      "rows": 6,
+      "parsedOk": true,
+      "parseReason": null,
+      "llmCalls": 2,
+      "inputTokens": 1811,
+      "outputTokens": 365,
+      "ms": 76150
+    },
+    {
+      "caseId": "case-02",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-03",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-04",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-05",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-06",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-07",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-08",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-09",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-10",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quo"
+    },
+    {
+      "caseId": "case-11-hard",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: request failed: fetch failed"
+    },
+    {
+      "caseId": "case-12-hard",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "LLM call failed: request failed: fetch failed"
+    }
+  ]
+}

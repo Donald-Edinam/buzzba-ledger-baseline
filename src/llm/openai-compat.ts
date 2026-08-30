@@ -6,6 +6,59 @@ interface ChatCompletion {
   usage?: { prompt_tokens?: number; completion_tokens?: number };
 }
 
+
+interface QuotaViolation {
+  quotaId?: string;
+  quotaValue?: string;
+  quotaMetric?: string;
+}
+
+/** Pulls the QuotaFailure violations out of a 429 body, whatever it is wrapped in. */
+function quotaViolations(body: string): QuotaViolation[] {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(body);
+  } catch {
+    return [];
+  }
+  // Google returns a single-element array; other providers return the object.
+  const root = Array.isArray(parsed) ? parsed[0] : parsed;
+  const details = (root as { error?: { details?: unknown[] } } | undefined)?.error?.details;
+  if (!Array.isArray(details)) return [];
+
+  const out: QuotaViolation[] = [];
+  for (const d of details) {
+    const violations = (d as { violations?: unknown[] } | undefined)?.violations;
+    if (!Array.isArray(violations)) continue;
+    for (const v of violations) {
+      if (v && typeof v === 'object') out.push(v as QuotaViolation);
+    }
+  }
+  return out;
+}
+
+/**
+ * Returns an explanation when a 429 must NOT be retried, or null when it is a
+ * per-minute throttle worth waiting out.
+ */
+function terminalQuota(body: string, provider?: string): string | null {
+  if (provider !== undefined && OpenAICompatClient.burnsQuotaOnRejection(provider)) {
+    return (
+      `${provider} counts rejected requests against its daily cap, so retrying ` +
+      `spends budget it cannot recover. Body: ${body.slice(0, 200)}`
+    );
+  }
+
+  for (const v of quotaViolations(body)) {
+    if (typeof v.quotaId === 'string' && v.quotaId.includes('PerDay')) {
+      const value = v.quotaValue !== undefined ? `, quotaValue=${v.quotaValue}` : '';
+      const metric = v.quotaMetric !== undefined ? `, quotaMetric=${v.quotaMetric}` : '';
+      return `daily quota reached (quotaId=${v.quotaId}${value}${metric}). Retrying cannot succeed today.`;
+    }
+  }
+  return null;
+}
+
 /**
  * One client for every provider that speaks the OpenAI chat-completions shape:
  * Gemini, Groq, OpenRouter, Ollama. Same contract as AnthropicClient, so
@@ -32,7 +85,24 @@ export class OpenAICompatClient implements LlmClient {
      * this client sends only `reasoning_effort`.
      */
     private readonly reasoningEffort?: string,
+    /**
+     * Provider key from PRESETS. Used only to decide whether a 429 is worth
+     * retrying -- see BURNS_QUOTA_ON_REJECTION. The client still reads no
+     * environment variables; the factory passes this in.
+     */
+    private readonly provider?: string,
   ) {}
+
+  /**
+   * Providers where a REJECTED request still counts against the daily
+   * allowance. Retrying here does not just fail, it destroys remaining budget,
+   * so a 429 is terminal regardless of what the body says.
+   */
+  private static readonly BURNS_QUOTA_ON_REJECTION = new Set(['openrouter']);
+
+  static burnsQuotaOnRejection(provider: string): boolean {
+    return OpenAICompatClient.BURNS_QUOTA_ON_REJECTION.has(provider);
+  }
 
   async complete(call: LlmCall): Promise<LlmResponse> {
     const started = Date.now();
@@ -105,7 +175,17 @@ export class OpenAICompatClient implements LlmClient {
         };
       }
 
-      lastError = `${res.status} ${await res.text()}`.slice(0, 300);
+      const rawBody = await res.text();
+      lastError = `${res.status} ${rawBody}`.slice(0, 300);
+
+      // A daily cap cannot be waited out inside a run. Google's 429 carries a
+      // RetryInfo of ~20s that reads like a per-minute throttle and is not, so
+      // trust the quotaId over the retry hint.
+      if (res.status === 429) {
+        const terminal = terminalQuota(rawBody, this.provider);
+        if (terminal) throw new Error(`QUOTA_EXHAUSTED: ${terminal}`);
+      }
+
       const retryable = res.status === 429 || res.status >= 500;
       if (!retryable || attempt === this.maxRetries) break;
 

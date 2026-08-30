@@ -6,6 +6,12 @@ export interface ProviderPreset {
   readonly keyEnv: string;
   readonly defaultModel: string;
   readonly note: string;
+  /**
+   * Free-tier requests per day, where it has actually been measured against
+   * this project. `null` means unmeasured -- NOT unlimited. Only populate this
+   * from an observed quota response, never from a documentation page.
+   */
+  readonly dailyRequestCap: number | null;
 }
 
 /**
@@ -20,31 +26,36 @@ export const PRESETS: Record<string, ProviderPreset> = {
     baseUrl: 'https://api.anthropic.com/v1',
     keyEnv: 'ANTHROPIC_API_KEY',
     defaultModel: 'claude-sonnet-5',
-    note: 'Paid per token, no free tier. Strongest results and the reference configuration for this project; a full 12-case run is cents, not dollars.',
+    note: 'Paid per token, no free tier, so no daily request cap to plan around. Strongest results; a full baseline-plus-agent comparison is cents, not dollars.',
+    dailyRequestCap: null,
   },
   gemini: {
     baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
     keyEnv: 'GEMINI_API_KEY',
     defaultModel: 'gemini-3.6-flash',
-    note: 'Free tier with per-minute and per-day request caps; expect 429s on a burst, which the client waits out. 3.x Flash reasons by default and those tokens are billed against max_tokens, so REASONING_EFFORT matters here; see docs/PROVIDERS.md. Google may use free-tier prompts to improve their models, so only send synthetic data.',
+    note: 'Free tier capped at a MEASURED 20 requests per day per model (quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier, observed 2026-08-30). Retrying a 429 against that cap cannot succeed, however long the backoff: the client throws QUOTA_EXHAUSTED instead. Rejected requests do not consume quota. 3.x Flash reasons by default and those tokens are billed against max_tokens, so REASONING_EFFORT matters here. Google may use free-tier prompts to improve their models, which is acceptable here only because every case is synthetic.',
+    dailyRequestCap: 20,
   },
   groq: {
     baseUrl: 'https://api.groq.com/openai/v1',
     keyEnv: 'GROQ_API_KEY',
     defaultModel: 'llama-3.3-70b-versatile',
-    note: 'Free tier, very fast inference, but tight per-minute request and token limits and a habit of retiring model names. Open-weight models follow strict JSON less reliably than Claude, so expect more parse failures.',
+    note: 'Free tier, very fast inference, but tight per-minute request and token limits and a habit of retiring model names. Daily cap not measured against this project, so it is left unset rather than guessed. Open-weight models follow strict JSON less reliably than Claude, so expect more parse failures.',
+    dailyRequestCap: null,
   },
   openrouter: {
     baseUrl: 'https://openrouter.ai/api/v1',
     keyEnv: 'OPENROUTER_API_KEY',
-    defaultModel: 'meta-llama/llama-3.3-70b-instruct:free',
-    note: 'One key across many models. The `:free` variants cost nothing but are heavily rate limited and can queue or fail under load; drop the suffix to pay for a reliable slot.',
+    defaultModel: 'google/gemma-4-31b-it:free',
+    note: 'One key across many models. `:free` variants are capped at 20 requests/minute always, and 50 requests/day on an account that has never bought credits -- 1000/day once $10 has been purchased at any point, which is a lifetime unlock rather than a balance requirement. Critically, REJECTED requests still count against the daily cap here, so a retry loop actively destroys budget; the client refuses to retry a 429 on this provider. The free lineup rotates without notice, so verify the model id resolves before a run.',
+    dailyRequestCap: 50,
   },
   ollama: {
     baseUrl: 'http://localhost:11434/v1',
     keyEnv: 'OLLAMA_API_KEY',
     defaultModel: 'qwen2.5:14b',
-    note: 'Fully local, free, no rate limits, needs no key. Requires `ollama serve` and the model pulled first; quality on a 14B model is well below the hosted options and long prompts are slow on CPU.',
+    note: 'Fully local, free, genuinely no request cap, needs no key. Requires `ollama serve` and the model pulled first; quality on a 14B model is well below the hosted options and long prompts are slow on CPU.',
+    dailyRequestCap: null,
   },
 };
 
@@ -112,6 +123,7 @@ export function createClient(env: NodeJS.ProcessEnv = process.env): LlmClient {
         DEFAULT_COMPAT_RETRIES,
         timeoutMs,
         reasoningEffort(env),
+        provider,
       );
 }
 

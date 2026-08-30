@@ -119,4 +119,37 @@ instead — visible immediately as a `parseReason` starting `TRUNCATED:` in
 `tests/unit/openai-compat.test.ts` pins the throw, the no-retry behaviour and
 the conditional `reasoning_effort` field.
 
+## D-003: The agent shares the baseline's prompt rather than copying it
+
+**Date:** 2026-08-30
+**Status:** decided
+
+**Ambiguity.** Iteration 1 must make exactly one architectural change against
+the baseline, so the changelog can attribute the gain to it. The agent's pass 2
+is specified as "the same system prompt as the baseline plus a roster block" —
+but nothing says whether "the same" means a copy or the same object.
+
+**Options considered.**
+1. Copy the baseline prompt text into `agent.ts`.
+2. Export `SYSTEM` and `renderSources` from `baseline.ts` and import them.
+
+**Decision.** Option 2. `baseline.ts` now exports both; behaviour is unchanged,
+the diff is two `export` keywords. `agent.ts` composes
+`${BASELINE_SYSTEM}\n\n${roster block}` and sends the identical user content.
+
+**Rationale.** Under option 1 the two prompts drift the first time either is
+touched, and the drift is silent. The whole claim of the changelog is that the
+roster is the only difference between the two runners; a shared constant makes
+that structurally true instead of a thing someone has to remember. The roster
+JSON recovery is deliberately *not* shared in the other direction: `parseRoster`
+is local to `agent.ts` rather than generalised into `parse.ts`, so the
+baseline's parsing path stays byte-identical to what produced its recorded
+60.71%.
+
+**Consequence if wrong.** If a later iteration needs a prompt that genuinely
+diverges from the baseline's, the shared constant becomes the wrong shape and
+the fix is to copy it then, with the divergence recorded as its own decision.
+`tests/integration/agent.test.ts` pins the roster reaching pass 2 and pass 1
+seeing only MoMo and daybook, so a change to either is a failing test.
+
 ---

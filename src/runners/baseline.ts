@@ -34,7 +34,7 @@ export interface Runner {
  * schema as the agent, so the comparison isolates the agentic design rather
  * than rewarding a better prompt.
  */
-const SYSTEM = `You reconstruct a barbershop's transaction ledger from messy records.
+export const SYSTEM = `You reconstruct a barbershop's transaction ledger from messy records.
 
 Sources: WhatsApp messages (bookings and unrelated chatter), MTN MoMo payment SMS
 (uppercase legal names, exact amounts), and transcribed handwritten daybook lines
@@ -54,7 +54,7 @@ Rules:
 Return ONLY a JSON array. No prose, no code fence. Each element:
 {"date":"YYYY-MM-DD","customer":string,"services":[string],"amount":number,"method":"cash"|"momo"|"unpaid"}`;
 
-function renderSources(c: Case): string {
+export function renderSources(c: Case): string {
   return [
     '=== WHATSAPP ===',
     ...c.sources.whatsapp,

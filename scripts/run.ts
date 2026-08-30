@@ -15,6 +15,7 @@ import { join } from 'node:path';
 import { CaseSchema } from '../src/domain/ledger.js';
 import type { LlmClient } from '../src/llm/client.js';
 import { createClient, describeProvider } from '../src/llm/factory.js';
+import { agentRunner } from '../src/runners/agent.js';
 import { baselineRunner, type Runner } from '../src/runners/baseline.js';
 
 try {
@@ -23,7 +24,7 @@ try {
   // .env file is optional
 }
 
-const RUNNERS: Record<string, Runner> = { baseline: baselineRunner };
+const RUNNERS: Record<string, Runner> = { baseline: baselineRunner, agent: agentRunner };
 
 const name = process.argv[2] ?? '';
 const runner = RUNNERS[name];
