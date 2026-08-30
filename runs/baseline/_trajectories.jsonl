@@ -1,0 +1,1 @@
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-01","steps":[{"step":1,"label":"single extraction call","promptChars":2422,"responseChars":688,"note":"parsed 7 rows"}]}

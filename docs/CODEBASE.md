@@ -11,7 +11,7 @@ cd frontier
 
 nvm use              # Node 22, pinned in .nvmrc
 npm ci               # exact install from package-lock.json
-npm run check        # typecheck + lint + 25 tests, all should pass
+npm run check        # typecheck + lint + 39 tests, all should pass
 npm run gen:cases    # writes the 12 evaluation cases into ./cases
 ```
 
@@ -81,8 +81,8 @@ hand-label anything.
 | File | What it does |
 | --- | --- |
 | `client.ts` | The `LlmClient` interface, plus the Anthropic client over `fetch`, no SDK dependency. Retries only on 429 and 5xx with backoff. Returns token usage and wall time, which is how cost per transaction gets measured. Also exports `StubClient`, which returns a canned reply so tests exercise the full pipeline without spending money. |
-| `openai-compat.ts` | The same contract against any OpenAI chat-completions endpoint: Gemini, Groq, OpenRouter, Ollama. Backs off harder on 429 than the Anthropic client, because free tiers throttle by requests per minute. |
-| `factory.ts` | Picks the client from `LLM_PROVIDER`, `MODEL` and the provider's key. Holds `PRESETS`, the base URL and default model per provider, and `describeProvider`, which stamps provider and model into `_run.json`. The only file in `src/llm` that reads the environment. See docs/PROVIDERS.md. |
+| `openai-compat.ts` | The same contract against any OpenAI chat-completions endpoint: Gemini, Groq, OpenRouter, Ollama. Backs off harder on 429 than the Anthropic client, because free tiers throttle by requests per minute. Sends `reasoning_effort`, and turns a `finish_reason: length` into a `TRUNCATED:` error so a thinking-token overrun is never misread as a parse failure. |
+| `factory.ts` | Picks the client from `LLM_PROVIDER`, `MODEL`, `REASONING_EFFORT`, `LLM_TIMEOUT_MS` and the provider's key. Holds `PRESETS`, the base URL and default model per provider, and `describeProvider`, which stamps provider and model into `_run.json`. The only file in `src/llm` that reads the environment. See docs/PROVIDERS.md. |
 
 ### src/core
 
@@ -108,7 +108,7 @@ The commands you type.
 
 ### tests
 
-25 tests. Three of them matter more than the rest:
+39 tests. Three of them matter more than the rest:
 
 - `generate.test.ts` asserts the same seed produces identical output, which is the reproducibility claim.
 - `score.test.ts` asserts a wrong field costs the whole row and that invented rows hurt precision, which is the scoring claim.

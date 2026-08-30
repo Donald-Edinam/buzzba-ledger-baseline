@@ -1,0 +1,22 @@
+{
+  "runner": "baseline",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+  "reasoningEffort": "low",
+  "wallMs": 16558,
+  "inputTokens": 987,
+  "outputTokens": 261,
+  "cases": [
+    {
+      "caseId": "case-01",
+      "rows": 7,
+      "parsedOk": true,
+      "parseReason": null,
+      "llmCalls": 1,
+      "inputTokens": 987,
+      "outputTokens": 261,
+      "ms": 16553
+    }
+  ]
+}

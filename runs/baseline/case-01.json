@@ -1,0 +1,66 @@
+[
+  {
+    "date": "2026-07-06",
+    "customer": "Kojo",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Nana Owusu",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kofi Adjei",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Yaw",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Prince",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  }
+]

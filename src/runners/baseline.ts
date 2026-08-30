@@ -71,6 +71,10 @@ export const baselineRunner: Runner = {
   name: 'baseline',
   async run(c, client) {
     const user = renderSources(c);
+    // Deliberately not wrapped: a TRUNCATED error from the client must reach
+    // scripts/run.ts, which records the case as a failure with its reason. A
+    // catch here would hand the parser an empty string and misreport a budget
+    // failure as a parse failure.
     const res = await client.complete({ system: SYSTEM, user });
     const parsed = parseLedger(res.text);
 

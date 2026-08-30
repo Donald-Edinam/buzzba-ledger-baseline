@@ -5,7 +5,7 @@
 ```bash
 nvm use              # Node 22
 npm ci               # exact lockfile install
-npm run check        # typecheck, lint, 25 tests
+npm run check        # typecheck, lint, 39 tests
 npm run gen:cases    # regenerate 12 cases from fixed seeds
 ```
 
@@ -15,6 +15,7 @@ npm run gen:cases    # regenerate 12 cases from fixed seeds
 export LLM_PROVIDER=anthropic     # anthropic | gemini | groq | openrouter | ollama
 export ANTHROPIC_API_KEY=...      # the key env var for the provider above
 export MODEL=claude-sonnet-5      # optional; each provider has a default
+export REASONING_EFFORT=low       # optional; OpenAI-compatible providers only
 npx tsx scripts/run.ts baseline
 npx tsx scripts/score.ts runs/baseline
 ```
@@ -27,6 +28,10 @@ export LLM_PROVIDER=groq && export GROQ_API_KEY=...
 export LLM_PROVIDER=openrouter && export OPENROUTER_API_KEY=...
 export LLM_PROVIDER=ollama        # local, no key; needs `ollama serve`
 ```
+
+On Gemini, read the Thinking tokens section of docs/PROVIDERS.md before a full
+run: reasoning tokens are billed against the output ceiling, and a case that
+overruns it fails as `TRUNCATED:` rather than being scored as a bad answer.
 
 See docs/PROVIDERS.md for costs, rate limits and caveats. The run prints
 `provider=... model=...` at start and records both in `_run.json`.

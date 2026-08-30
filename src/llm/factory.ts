@@ -25,8 +25,8 @@ export const PRESETS: Record<string, ProviderPreset> = {
   gemini: {
     baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
     keyEnv: 'GEMINI_API_KEY',
-    defaultModel: 'gemini-2.5-flash',
-    note: 'Free tier with per-minute and per-day request caps; expect 429s on a burst, which the client waits out. Google may use free-tier prompts to improve their models, so only send synthetic data.',
+    defaultModel: 'gemini-3.6-flash',
+    note: 'Free tier with per-minute and per-day request caps; expect 429s on a burst, which the client waits out. 3.x Flash reasons by default and those tokens are billed against max_tokens, so REASONING_EFFORT matters here; see docs/PROVIDERS.md. Google may use free-tier prompts to improve their models, so only send synthetic data.',
   },
   groq: {
     baseUrl: 'https://api.groq.com/openai/v1',
@@ -47,6 +47,29 @@ export const PRESETS: Record<string, ProviderPreset> = {
     note: 'Fully local, free, no rate limits, needs no key. Requires `ollama serve` and the model pulled first; quality on a 14B model is well below the hosted options and long prompts are slow on CPU.',
   },
 };
+
+const DEFAULT_ANTHROPIC_RETRIES = 4;
+const DEFAULT_COMPAT_RETRIES = 5;
+const DEFAULT_TIMEOUT_MS = 180_000;
+
+/**
+ * Default 'low' rather than 'none': some reasoning measurably helps the
+ * cross-source join, but an unbounded budget is what starves the answer of
+ * output tokens. Set REASONING_EFFORT=none to turn it off entirely.
+ */
+function reasoningEffort(env: NodeJS.ProcessEnv): string {
+  return env['REASONING_EFFORT'] ?? 'low';
+}
+
+function timeout(env: NodeJS.ProcessEnv): number {
+  const raw = env['LLM_TIMEOUT_MS'];
+  if (raw === undefined) return DEFAULT_TIMEOUT_MS;
+  const parsed = Number(raw);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    throw new Error(`LLM_TIMEOUT_MS must be a positive number of milliseconds, got "${raw}"`);
+  }
+  return parsed;
+}
 
 function preset(provider: string): ProviderPreset {
   const found = PRESETS[provider];
@@ -75,9 +98,21 @@ export function createClient(env: NodeJS.ProcessEnv = process.env): LlmClient {
   }
 
   const baseUrl = env['LLM_BASE_URL'] ?? p.baseUrl;
+  const timeoutMs = timeout(env);
+
+  // reasoning_effort is an OpenAI-compatible field. Anthropic's extended
+  // thinking is a different parameter shape, and this project does not use it,
+  // so AnthropicClient never receives this knob.
   return provider === 'anthropic'
-    ? new AnthropicClient(model, apiKey)
-    : new OpenAICompatClient(model, apiKey, baseUrl);
+    ? new AnthropicClient(model, apiKey, DEFAULT_ANTHROPIC_RETRIES, timeoutMs)
+    : new OpenAICompatClient(
+        model,
+        apiKey,
+        baseUrl,
+        DEFAULT_COMPAT_RETRIES,
+        timeoutMs,
+        reasoningEffort(env),
+      );
 }
 
 /** Stamped into runs/<name>/_run.json so every number is traceable to what produced it. */
@@ -88,5 +123,8 @@ export function describeProvider(env: NodeJS.ProcessEnv = process.env): Record<s
     provider,
     model: env['MODEL'] ?? p.defaultModel,
     baseUrl: env['LLM_BASE_URL'] ?? p.baseUrl,
+    // Recorded for every provider, but only sent by the OpenAI-compatible
+    // client; on anthropic it documents the setting, not a request field.
+    reasoningEffort: reasoningEffort(env),
   };
 }

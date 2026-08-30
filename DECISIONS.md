@@ -67,4 +67,56 @@ settled it (correctness, spec wording, failure mode, cost).
 **Consequence if wrong.** What breaks, how it is detected, and how long the
 reversal would take. Point to the test that pins the behaviour.
 
+## D-002: Thinking tokens are a budget failure, not a wrong answer
+
+**Date:** 2026-08-30
+**Status:** decided
+
+**Ambiguity.** The scoring protocol has one bucket for a case that produces no
+usable ledger. It does not distinguish a model that answered badly from a model
+that never got to answer. Gemini 3.x Flash reasons by default and bills those
+tokens against `max_tokens`, so an overrun returns HTTP 200 with empty content
+— which `parse.ts` correctly reports as "no JSON found". Scored naively, a
+budget misconfiguration is recorded as a model that cannot follow a schema.
+
+**Options considered.**
+1. Raise `max_tokens` and leave it there. Cheap, but the same failure returns
+   the moment a model reasons harder or a case gets longer, and it stays
+   invisible when it does.
+2. Detect `finish_reason: "length"` and fail the case with a named error, plus
+   a configurable reasoning budget.
+3. Detect it and retry with a larger ceiling or less reasoning.
+
+**Decision.** Option 2. The `max_tokens` default is 16000; `REASONING_EFFORT`
+(default `low`) is sent as `reasoning_effort` on OpenAI-compatible providers
+only; `finish_reason: "length"` throws `TRUNCATED:` carrying
+`completion_tokens` and the requested `max_tokens`. `baseline.ts` does not
+catch it, so `run.ts` records it per-case. `finishReason` and
+`reasoningEffort` are recorded on every response and in `_run.json`.
+
+**Rationale.** Option 3 was rejected because a silent retry at a different
+budget means two cases in the same run were answered under different
+conditions, which is the same disease as switching models mid-run (D-001).
+The measurement has to stay honest even when that costs a case. `low` rather
+than `none` as the default because some reasoning measurably helps the
+cross-source join, while an unbounded budget is what starves the output.
+The truncation is never retried: an identical request truncates identically,
+so a retry would spend quota to reproduce the same failure.
+
+Two consequences of scope worth recording. `reasoning_effort` overlaps with
+Gemini's native `thinking_level` / `thinking_budget` and the two cannot both be
+sent, so only `reasoning_effort` is used. `AnthropicClient` reports
+`finishReason` but does not throw on truncation: Anthropic's extended thinking
+is off by default and a different parameter shape, so the failure mode this
+guards against does not arise there. If that changes, the guard belongs in both.
+
+**Consequence if wrong.** If `low` turns out to hurt accuracy, it is one
+environment variable, and `_run.json` records what each existing run used, so
+old numbers stay interpretable rather than needing to be discarded. If the
+`TRUNCATED:` guard is too eager, a case that would have parsed is failed
+instead — visible immediately as a `parseReason` starting `TRUNCATED:` in
+`_run.json`, never as a silently lower score.
+`tests/unit/openai-compat.test.ts` pins the throw, the no-retry behaviour and
+the conditional `reasoning_effort` field.
+
 ---
