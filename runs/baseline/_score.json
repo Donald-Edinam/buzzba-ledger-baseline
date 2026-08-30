@@ -1,0 +1,264 @@
+{
+  "aggregate": {
+    "cases": 12,
+    "exactRowAccuracy": 60.71,
+    "precision": 69.67,
+    "f1": 64.74,
+    "revenueErrorGhs": 1290,
+    "totalGoldRows": 341
+  },
+  "cases": [
+    {
+      "caseId": "case-01",
+      "goldRows": 8,
+      "predictedRows": 7,
+      "exactRowAccuracy": 50,
+      "precision": 57.14,
+      "recall": 50,
+      "f1": 53.33,
+      "goldTotal": 180,
+      "predictedTotal": 150,
+      "revenueErrorGhs": 30,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 66.67,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 3,
+      "missedRows": 4
+    },
+    {
+      "caseId": "case-02",
+      "goldRows": 14,
+      "predictedRows": 13,
+      "exactRowAccuracy": 78.57,
+      "precision": 84.62,
+      "recall": 78.57,
+      "f1": 81.48,
+      "goldTotal": 365,
+      "predictedTotal": 325,
+      "revenueErrorGhs": 40,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 91.67,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 2,
+      "missedRows": 3
+    },
+    {
+      "caseId": "case-03",
+      "goldRows": 17,
+      "predictedRows": 17,
+      "exactRowAccuracy": 58.82,
+      "precision": 58.82,
+      "recall": 58.82,
+      "f1": 58.82,
+      "goldTotal": 465,
+      "predictedTotal": 465,
+      "revenueErrorGhs": 0,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 76.92,
+        "services": 92.31,
+        "amount": 92.31,
+        "method": 100
+      },
+      "hallucinatedRows": 7,
+      "missedRows": 7
+    },
+    {
+      "caseId": "case-04",
+      "goldRows": 17,
+      "predictedRows": 13,
+      "exactRowAccuracy": 58.82,
+      "precision": 76.92,
+      "recall": 58.82,
+      "f1": 66.66,
+      "goldTotal": 550,
+      "predictedTotal": 440,
+      "revenueErrorGhs": 110,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 76.92,
+        "services": 92.31,
+        "amount": 92.31,
+        "method": 92.31
+      },
+      "hallucinatedRows": 3,
+      "missedRows": 7
+    },
+    {
+      "caseId": "case-05",
+      "goldRows": 20,
+      "predictedRows": 15,
+      "exactRowAccuracy": 55,
+      "precision": 73.33,
+      "recall": 55,
+      "f1": 62.86,
+      "goldTotal": 520,
+      "predictedTotal": 410,
+      "revenueErrorGhs": 110,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 73.33,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 4,
+      "missedRows": 9
+    },
+    {
+      "caseId": "case-06",
+      "goldRows": 22,
+      "predictedRows": 19,
+      "exactRowAccuracy": 72.73,
+      "precision": 84.21,
+      "recall": 72.73,
+      "f1": 78.05,
+      "goldTotal": 605,
+      "predictedTotal": 485,
+      "revenueErrorGhs": 120,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 88.89,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 3,
+      "missedRows": 6
+    },
+    {
+      "caseId": "case-07",
+      "goldRows": 30,
+      "predictedRows": 26,
+      "exactRowAccuracy": 83.33,
+      "precision": 96.15,
+      "recall": 83.33,
+      "f1": 89.28,
+      "goldTotal": 1050,
+      "predictedTotal": 940,
+      "revenueErrorGhs": 110,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 100,
+        "services": 100,
+        "amount": 100,
+        "method": 96
+      },
+      "hallucinatedRows": 1,
+      "missedRows": 5
+    },
+    {
+      "caseId": "case-08",
+      "goldRows": 28,
+      "predictedRows": 28,
+      "exactRowAccuracy": 75,
+      "precision": 75,
+      "recall": 75,
+      "f1": 75,
+      "goldTotal": 905,
+      "predictedTotal": 905,
+      "revenueErrorGhs": 0,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 95.45,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 7,
+      "missedRows": 7
+    },
+    {
+      "caseId": "case-09",
+      "goldRows": 36,
+      "predictedRows": 29,
+      "exactRowAccuracy": 63.89,
+      "precision": 79.31,
+      "recall": 63.89,
+      "f1": 70.77,
+      "goldTotal": 1320,
+      "predictedTotal": 1070,
+      "revenueErrorGhs": 250,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 82.14,
+        "services": 96.43,
+        "amount": 96.43,
+        "method": 96.43
+      },
+      "hallucinatedRows": 6,
+      "missedRows": 13
+    },
+    {
+      "caseId": "case-10",
+      "goldRows": 35,
+      "predictedRows": 33,
+      "exactRowAccuracy": 48.57,
+      "precision": 51.52,
+      "recall": 48.57,
+      "f1": 50,
+      "goldTotal": 1335,
+      "predictedTotal": 1275,
+      "revenueErrorGhs": 60,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 65.38,
+        "services": 96.15,
+        "amount": 96.15,
+        "method": 92.31
+      },
+      "hallucinatedRows": 16,
+      "missedRows": 18
+    },
+    {
+      "caseId": "case-11-hard",
+      "goldRows": 44,
+      "predictedRows": 35,
+      "exactRowAccuracy": 40.91,
+      "precision": 51.43,
+      "recall": 40.91,
+      "f1": 45.57,
+      "goldTotal": 1505,
+      "predictedTotal": 1255,
+      "revenueErrorGhs": 250,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 62.07,
+        "services": 96.55,
+        "amount": 96.55,
+        "method": 100
+      },
+      "hallucinatedRows": 17,
+      "missedRows": 26
+    },
+    {
+      "caseId": "case-12-hard",
+      "goldRows": 70,
+      "predictedRows": 63,
+      "exactRowAccuracy": 42.86,
+      "precision": 47.62,
+      "recall": 42.86,
+      "f1": 45.11,
+      "goldTotal": 2390,
+      "predictedTotal": 2180,
+      "revenueErrorGhs": 210,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 53.57,
+        "services": 98.21,
+        "amount": 98.21,
+        "method": 98.21
+      },
+      "hallucinatedRows": 33,
+      "missedRows": 40
+    }
+  ]
+}

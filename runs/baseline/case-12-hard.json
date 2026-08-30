@@ -1,0 +1,597 @@
+[
+  {
+    "date": "2026-07-06",
+    "customer": "YAW BOATENG",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "PRINCE",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "RAHIM",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "KOJO",
+    "services": [
+      "kids_cut",
+      "wash"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "ISAAC",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "EMMANUEL",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "A SARPONG",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "FIIFI",
+    "services": [
+      "kids_cut",
+      "wash"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "ABENA",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "K ASANTE",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "K ASANTE",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "KELVIN",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "KOJO",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "BRIGHT",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "YAW",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "SELORM DZIDZOR",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "NANA OWUSU",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "KWAME",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "FIIFI",
+    "services": [
+      "dye",
+      "haircut"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "K ASANTE",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "KOFI",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "YAW BOATENG",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "KWAME MENSAH",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "FIIFI",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "EMMANUEL",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "PRINCE",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "NANA OWUSU",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "A SARPONG",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "FIIFI",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "NANA OWUSU",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "YAW",
+    "services": [
+      "kids_cut",
+      "beard_trim"
+    ],
+    "amount": 35,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "SELORM DZIDZOR",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "SELORM",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "ATO",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "ATO",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "KOJO BLUE",
+    "services": [
+      "dye",
+      "haircut"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "PRINCE",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "YAW BOATENG",
+    "services": [
+      "wash",
+      "dye"
+    ],
+    "amount": 60,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "SELORM",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "KOJO BLUE",
+    "services": [
+      "wash",
+      "lineup"
+    ],
+    "amount": 25,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "FIIFI",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "SELORM",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "YAW BOATENG",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "YAW BOATENG",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "PRINCE",
+    "services": [
+      "kids_cut",
+      "beard_trim"
+    ],
+    "amount": 35,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "ESI",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "ESI",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "ATO",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "ISAAC",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "ABENA",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "KWAME MENSAH",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "ISAAC",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "JUNIOR",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "EMMANUEL",
+    "services": [
+      "kids_cut",
+      "beard_trim"
+    ],
+    "amount": 35,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "ATO",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "KOFI ADJEI",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "KOFI ADJEI",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "ATO",
+    "services": [
+      "beard_trim",
+      "haircut"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "PRINCE",
+    "services": [
+      "haircut",
+      "kids_cut"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "SELORM DZIDZOR",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "ISAAC",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "KOJO BLUE",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "YAWA",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  }
+]

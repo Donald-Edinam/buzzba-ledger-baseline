@@ -1,0 +1,143 @@
+[
+  {
+    "date": "2026-07-06",
+    "customer": "Kofi",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Prince",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Kofi Small",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kelvin",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Emmanuel",
+    "services": [
+      "beard_trim",
+      "wash"
+    ],
+    "amount": 25,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Ato",
+    "services": [
+      "wash",
+      "kids_cut"
+    ],
+    "amount": 30,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Nana O",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Emmanuel",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  }
+]

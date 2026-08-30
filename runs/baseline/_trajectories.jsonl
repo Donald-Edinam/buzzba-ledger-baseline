@@ -1,1 +1,10 @@
-{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-01","steps":[{"step":1,"label":"single extraction call","promptChars":2422,"responseChars":688,"note":"parsed 7 rows"}]}
+    {"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-01","steps":[{"step":1,"label":"single extraction call","promptChars":2422,"responseChars":695,"note":"parsed 7 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-02","steps":[{"step":1,"label":"single extraction call","promptChars":3611,"responseChars":1275,"note":"parsed 13 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-03","steps":[{"step":1,"label":"single extraction call","promptChars":3723,"responseChars":1666,"note":"parsed 17 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-04","steps":[{"step":1,"label":"single extraction call","promptChars":4186,"responseChars":1302,"note":"parsed 13 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-05","steps":[{"step":1,"label":"single extraction call","promptChars":4670,"responseChars":1513,"note":"parsed 15 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-06","steps":[{"step":1,"label":"single extraction call","promptChars":4084,"responseChars":1893,"note":"parsed 19 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-09","steps":[{"step":1,"label":"single extraction call","promptChars":6864,"responseChars":2903,"note":"parsed 29 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-10","steps":[{"step":1,"label":"single extraction call","promptChars":7026,"responseChars":3355,"note":"parsed 33 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-11-hard","steps":[{"step":1,"label":"single extraction call","promptChars":7980,"responseChars":3604,"note":"parsed 35 rows"}]}
+{"runner":"baseline","model":"gemini-3.6-flash","caseId":"case-12-hard","steps":[{"step":1,"label":"single extraction call","promptChars":12416,"responseChars":6345,"note":"parsed 63 rows"}]}

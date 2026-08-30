@@ -20,6 +20,15 @@
   },
   {
     "date": "2026-07-07",
+    "customer": "Sister Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
     "customer": "Nana Owusu",
     "services": [
       "wash"
@@ -52,15 +61,6 @@
       "lineup"
     ],
     "amount": 15,
-    "method": "momo"
-  },
-  {
-    "date": "2026-07-07",
-    "customer": "Abena Sarpong",
-    "services": [
-      "wash"
-    ],
-    "amount": 10,
     "method": "momo"
   }
 ]

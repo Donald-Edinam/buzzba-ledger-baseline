@@ -1,0 +1,159 @@
+[
+  {
+    "date": "2026-07-06",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Godwin",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Fiifi",
+    "services": [
+      "wash",
+      "beard_trim"
+    ],
+    "amount": 25,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Rahim",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Bright",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Bright",
+    "services": [
+      "wash",
+      "lineup"
+    ],
+    "amount": 25,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Sister Abena",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Yawa",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Kojo Blue",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Chairman",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Prince",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Sister Abena",
+    "services": [
+      "dye",
+      "kids_cut"
+    ],
+    "amount": 70,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Kwame",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  }
+]
