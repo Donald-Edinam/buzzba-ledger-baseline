@@ -1,0 +1,55 @@
+{
+  "id": "case-03",
+  "seed": 1003,
+  "notes": "Heavier day, more alias collisions.",
+  "sources": {
+    "whatsapp": [
+      "[2026-07-08 10:44] Ato: Boss my phone was off sorry",
+      "[2026-07-07 09:44] Bright: do you do dreadlocks?",
+      "[2026-07-08 14:48] chairman: Good morning boss, I want child cut",
+      "[2026-07-06 08:05] Selorm: Bro, I want child cut",
+      "[2026-07-07 09:32] Selorm: Boss, I want shape up , 15 cedis right?",
+      "[2026-07-08 18:21] Fiifi: chale the shop dey open on sunday?",
+      "[2026-07-07 15:05] Bright: Boss, I want cut",
+      "[2026-07-08 08:05] Junior: Good morning boss, I want trim the beard",
+      "[2026-07-06 11:21] Selorm: Boss my phone was off sorry",
+      "[2026-07-08 15:48] Kojo: Good morning boss, I want trim the beard",
+      "[2026-07-08 14:05] Ato: Charley, I want low cut , 30 cedis right?",
+      "[2026-07-07 14:05] Bright: Charley, I want hair wash and shape up , 25 cedis right?",
+      "[2026-07-07 08:44] Nana: do you do dreadlocks?",
+      "[2026-07-06 17:17] Selorm: Bro, I want haircut , 30 cedis right?",
+      "[2026-07-08 17:32] Abena: Wo ho te sen, I want colour and kids cut",
+      "[2026-07-08 14:17] Prince: Charley, I want line up , 15 cedis right?",
+      "[2026-07-06 19:05] Fiifi: Bro, I want hair wash and beard trim , 25 cedis right?",
+      "[2026-07-06 09:02] Kojo: Boss are you open today?",
+      "[2026-07-07 16:32] Yawa: Boss, I want shave am and colour"
+    ],
+    "momo_sms": [
+      "Payment received for GHS 30.00 from SELORM DZIDZOR on 2026-07-06 10:11. Current Balance: GHS 3468.00. Reference: CYBAH. Financial Transaction Id: 668060679.",
+      "Payment received for GHS 15.00 from GODWIN on 2026-07-06 11:11. Current Balance: GHS 3720.00. Reference: CYBAH. Financial Transaction Id: 584043554.",
+      "Payment received for GHS 15.00 from RAHIM on 2026-07-06 08:54. Current Balance: GHS 2423.00. Reference: CYBAH. Financial Transaction Id: 138188125.",
+      "Payment received for GHS 20.00 from SELORM DZIDZOR on 2026-07-06 09:39. Current Balance: GHS 1719.00. Reference: CYBAH. Financial Transaction Id: 705985450.",
+      "Payment received for GHS 15.00 from SELORM DZIDZOR on 2026-07-07 09:26. Current Balance: GHS 3328.00. Reference: CYBAH. Financial Transaction Id: 818127433.",
+      "Payment received for GHS 25.00 from BRIGHT on 2026-07-07 14:11. Current Balance: GHS 971.00. Reference: CYBAH. Financial Transaction Id: 306179347.",
+      "Payment received for GHS 30.00 from ATO QUAYE on 2026-07-08 09:11. Current Balance: GHS 3130.00. Reference: CYBAH. Financial Transaction Id: 219391635."
+    ],
+    "daybook": [
+      "06/07  Selorm  cut  30  momo",
+      "06/07  Godwin  l/up  15  momo",
+      "06/07  Fiifi  wash+beard  25  cash",
+      "06/07  Rahim  beard  15  momo",
+      "06/07  Selorm  kids  20  momo",
+      "07/07  Bright  cut  30  cash",
+      "07/07  Bright  wash+l/up  25  momo",
+      "07/07  sister Abena  beard  15  cash",
+      "07/07  Yawa  cut+dye  -  go pay friday",
+      "08/07  Kojo Blue  beard  15  cash",
+      "08/07  chairman  beard  -  cash",
+      "08/07  Prince  l/up  15  cash",
+      "08/07  Abena  dye+kids  70  cash",
+      "08/07  Ato  cut  30  momo",
+      "08/07  Kwame  kids  -  cash",
+      "08/07  Ato  cut  30  cash"
+    ]
+  }
+}

@@ -1,0 +1,662 @@
+[
+  {
+    "date": "2026-07-06",
+    "customer": "Yaw Boateng",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Prince",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Rahim",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Kojo Asante",
+    "services": [
+      "kids_cut",
+      "wash"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Isaac",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Emmanuel",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Musah",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "kids_cut",
+      "wash"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Isaac",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kojo Asante",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kojo Asante",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kelvin",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Kojo Asante",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Bright",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Yaw Boateng",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Nana Owusu",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Esi Amoah",
+    "services": [
+      "dye",
+      "wash"
+    ],
+    "amount": 60,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "dye",
+      "haircut"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Kojo Asante",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Kofi Adjei",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Yaw Boateng",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Emmanuel",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Prince",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "Nana Owusu",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "lineup",
+      "dye"
+    ],
+    "amount": 65,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "Musah",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-10",
+    "customer": "Nana Owusu",
+    "services": [
+      "haircut",
+      "dye"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Yaw Boateng",
+    "services": [
+      "kids_cut",
+      "beard_trim"
+    ],
+    "amount": 35,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Ato Quaye",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Kojo Asante",
+    "services": [
+      "dye",
+      "haircut"
+    ],
+    "amount": 80,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Prince",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-11",
+    "customer": "Isaac",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Yaw Boateng",
+    "services": [
+      "wash",
+      "dye"
+    ],
+    "amount": 60,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Kojo Asante",
+    "services": [
+      "wash",
+      "lineup"
+    ],
+    "amount": 25,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Fiifi Tetteh",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Yaw Boateng",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Yaw Boateng",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-12",
+    "customer": "Prince",
+    "services": [
+      "kids_cut",
+      "beard_trim"
+    ],
+    "amount": 35,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "Esi Amoah",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "Esi Amoah",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut",
+      "lineup"
+    ],
+    "amount": 45,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "Isaac",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "Abena Sarpong",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-13",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Isaac",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Emmanuel",
+    "services": [
+      "kids_cut",
+      "beard_trim"
+    ],
+    "amount": 35,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Kofi Adjei",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Kofi Adjei",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-14",
+    "customer": "Ato Quaye",
+    "services": [
+      "beard_trim",
+      "haircut"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "Prince",
+    "services": [
+      "haircut",
+      "kids_cut"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "Selorm Dzidzor",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "Isaac",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "Isaac",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "Kojo Asante",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-15",
+    "customer": "Yaw Boateng",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "cash"
+  }
+]

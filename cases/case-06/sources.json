@@ -1,0 +1,61 @@
+{
+  "id": "case-06",
+  "seed": 1006,
+  "notes": "Week-scale, memory of roster should start paying off.",
+  "sources": {
+    "whatsapp": [
+      "[2026-07-06 14:02] Ato: how much be the dye now?",
+      "[2026-07-10 10:17] Selorm: Chale, I want the small boy cut and cut",
+      "[2026-07-09 07:02] Yaw: Boss are you open today?",
+      "[2026-07-07 13:44] Selorm: Boss are you open today?",
+      "[2026-07-06 15:21] Kojo: how much be the dye now?",
+      "[2026-07-08 15:17] Esi: Massa, I want kids cut",
+      "[2026-07-08 19:17] Emmanuel: Wo ho te sen, I want colour",
+      "[2026-07-08 09:05] Kofi Small: Good morning boss, I want shave am and wash",
+      "[2026-07-09 11:17] Prince: Good morning boss, I want beard and the small boy cut , 35 cedis right?",
+      "[2026-07-08 18:48] Kofi: Good morning boss, I want black am",
+      "[2026-07-08 16:21] Ato: Boss my phone was off sorry",
+      "[2026-07-10 17:48] Bright: Boss, I want beard trim and the small boy cut",
+      "[2026-07-08 09:21] Yaw: I no fit come again today, something come up",
+      "[2026-07-10 20:21] Ato: chale the shop dey open on sunday?",
+      "[2026-07-10 09:17] Emmanuel: Charley, I want low cut , 30 cedis right?",
+      "[2026-07-09 18:32] Esi: Charley, I want hair wash and shape up",
+      "[2026-07-09 07:32] Esi: Bro, I want child cut , 20 cedis right?",
+      "[2026-07-09 16:02] Kofi: do you do dreadlocks?",
+      "[2026-07-07 08:48] Esi: Wo ho te sen, I want beard , 15 cedis right?",
+      "[2026-07-07 18:02] Nana: Wo ho te sen, I go come next week",
+      "[2026-07-10 21:02] Bright: do you do dreadlocks?"
+    ],
+    "momo_sms": [
+      "Payment received for GHS 15.00 from SELORM DZIDZOR on 2026-07-06 08:54. Current Balance: GHS 1915.00. Reference: CYBAH. Financial Transaction Id: 456117435.",
+      "Payment received for GHS 15.00 from KOFI ADJEI on 2026-07-06 19:11. Current Balance: GHS 3995.00. Reference: CYBAH. Financial Transaction Id: 330927299.",
+      "Payment received for GHS 20.00 from ESI AMOAH on 2026-07-08 11:54. Current Balance: GHS 3384.00. Reference: CYBAH. Financial Transaction Id: 235332467.",
+      "Payment received for GHS 35.00 from PRINCE on 2026-07-09 17:26. Current Balance: GHS 642.00. Reference: CYBAH. Financial Transaction Id: 843222465.",
+      "Payment received for GHS 25.00 from ESI AMOAH on 2026-07-09 11:39. Current Balance: GHS 817.00. Reference: CYBAH. Financial Transaction Id: 602047505.",
+      "Payment received for GHS 45.00 from ESI AMOAH on 2026-07-09 17:26. Current Balance: GHS 1005.00. Reference: CYBAH. Financial Transaction Id: 784101317.",
+      "Payment received for GHS 10.00 from A SARPONG on 2026-07-09 12:11. Current Balance: GHS 507.00. Reference: CYBAH. Financial Transaction Id: 401486043.",
+      "Payment received for GHS 20.00 from ESI AMOAH on 2026-07-09 18:39. Current Balance: GHS 2375.00. Reference: CYBAH. Financial Transaction Id: 948105144."
+    ],
+    "daybook": [
+      "06/07  Selorm  beard  15  momo",
+      "06/07  Musah  wash  10  cash",
+      "06/07  Kofi Small  beard  15  momo",
+      "06/07  Fiifi  l/up  15  cash",
+      "07/07  Kelvin  wash+cut  40  cash",
+      "07/07  Abena  wash  10  cash",
+      "07/07  Ato  cut  30  credit",
+      "07/07  Esi  beard  15  cash",
+      "08/07  Esi  kids  20  momo",
+      "08/07  Kofi  cut+wash  40  credit",
+      "08/07  Kofi  beard  15  cash",
+      "08/07  Kofi  dye  50  owing",
+      "09/07  Prince  beard+kids  35  momo",
+      "09/07  Junior  beard+l/up  30  cash",
+      "09/07  Esi  wash+l/up  25  momo",
+      "09/07  Esi  cut+beard  45  momo",
+      "09/07  sister Abena  wash  10  momo",
+      "10/07  Emmanuel  cut  -  cash",
+      "10/07  Bright  beard+kids  35  cash"
+    ]
+  }
+}
