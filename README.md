@@ -1,4 +1,4 @@
-# Frontier Engineering Challenge 2026 — Submission
+# Frontier Engineering Challenge 2026 - Submission
 
 > One paragraph: what the problem was, what this solves, and the single most
 > important thing a reviewer should know. Write this LAST, rewrite it twice.
@@ -15,8 +15,8 @@ make check         # typecheck + lint + test
 Or with zero local toolchain:
 
 ```bash
-docker build -t frontier-submission .
-docker run --rm frontier-submission
+docker build -t buzzba-ledger .
+docker run --rm buzzba-ledger
 ```
 
 The Docker build runs typecheck and tests as a build stage. If the image

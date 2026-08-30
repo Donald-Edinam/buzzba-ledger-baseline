@@ -23,10 +23,10 @@ clean: ## Remove build artifacts
 	rm -rf dist coverage node_modules
 
 docker-build: ## Build the container image
-	docker build -t frontier-submission .
+	docker build -t buzzba-ledger .
 
 docker-run: ## Run inside the container
-	docker run --rm -it frontier-submission
+	docker run --rm -it buzzba-ledger
 
 cases: ## Regenerate the 12 evaluation cases from seeds
 	npx tsx scripts/gen-cases.ts

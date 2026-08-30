@@ -6,8 +6,7 @@ touching anything; you will not need to open most of these files.
 ## Setup, from nothing
 
 ```bash
-tar -xzf buzzba-ledger-baseline.tar.gz
-cd frontier
+cd buzzba-ledger-baseline
 
 nvm use              # Node 22, pinned in .nvmrc
 npm ci               # exact install from package-lock.json
