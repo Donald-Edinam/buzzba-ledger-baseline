@@ -7,7 +7,6 @@
 "start": "tsx src/index.ts",
 "build": "tsc -p tsconfig.json",
 "test": "vitest run",
-"run": "tsx --env-file=.env scripts/run.ts",
 "baseline": "tsx --env-file=.env scripts/run.ts baseline && tsx scripts/score.ts runs/baseline",
 "test:watch": "vitest",
 "test:cov": "vitest run --coverage",

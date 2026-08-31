@@ -6,9 +6,9 @@ A barbershop in Accra takes bookings on WhatsApp, receives payments as MTN MoMo
 SMS, and writes the rest in a paper daybook. None of the three agree, and none is
 a ledger. This project builds an agent that reads all three and reconstructs the
 week's transactions as structured rows, and measures it against a known answer.
-The harness, the twelve cases and the baseline numbers are reproducible here. The
-agent is one iteration in and has no complete measured run yet, which Results
-states plainly.
+The harness, the twelve cases and the numbers are reproducible here. One agent
+iteration was built and measured, made the results worse, and was removed. That
+is reported in Results and in [CHANGELOG.md](./CHANGELOG.md) rather than buried.
 
 ## The user and the bottleneck
 
@@ -105,47 +105,37 @@ The protocol was fixed in `docs/EVAL.md` before any agent code was written.
 Primary metric is exact row accuracy: a row counts only if date, customer,
 services, amount and method are all correct. No partial credit.
 
-**Baseline**, one prompt with all three sources and the price list, on
-`gemini-3.6-flash` through the Gemini API. Numbers are from
-`runs/baseline/_score.json` and reproduce when re-scored from the committed
-predictions.
+The comparison below is the matched 7-case subset where both the baseline and the
+agent produced predictions, `case-03` through `case-08` and `case-10`, both on
+`gemini-3.6-flash`. Both hard cases are missing from it. Full per-case figures,
+the reasoning, and the limitations are in [CHANGELOG.md](./CHANGELOG.md).
 
-| Case | Gold rows | Exact | Precision | Revenue error | Customer field |
-| --- | --- | --- | --- | --- | --- |
-| `case-01` | 8 | 50.00 | 44.44 | GHS 10 | 57.14 |
-| `case-02` | 14 | 78.57 | 84.62 | GHS 40 | 91.67 |
-| `case-03` | 17 | 58.82 | 58.82 | GHS 0 | 76.92 |
-| `case-04` | 17 | 58.82 | 76.92 | GHS 110 | 76.92 |
-| `case-05` | 20 | 55.00 | 73.33 | GHS 110 | 73.33 |
-| `case-06` | 22 | 72.73 | 84.21 | GHS 120 | 88.89 |
-| `case-07` | 30 | 83.33 | 96.15 | GHS 110 | 100.00 |
-| `case-08` | 28 | 75.00 | 75.00 | GHS 0 | 95.45 |
-| `case-09` | 36 | 63.89 | 79.31 | GHS 250 | 82.14 |
-| `case-10` | 35 | 48.57 | 51.52 | GHS 60 | 65.38 |
-| `case-11-hard` | 44 | 40.91 | 51.43 | GHS 250 | 62.07 |
-| `case-12-hard` | 70 | 42.86 | 47.62 | GHS 210 | 53.57 |
+| | Exact | Precision | Revenue error |
+| --- | --- | --- | --- |
+| Baseline, one prompt | **64.61** | **73.71** | GHS 510 |
+| `agent-v1`, roster then extract | 56.21 | 63.92 | GHS 525 |
 
-Aggregate over 341 gold rows: **60.71 exact, 68.61 precision, 64.22 F1, GHS 1270
-revenue error.**
+**The agent iteration made things worse and was removed.** Exact accuracy fell
+8.40 points, precision fell 9.79, customer accuracy fell 4.61. The result is kept
+because it is measured. The reading, argued in CHANGELOG.md, is that precision
+falling further than accuracy is the signature of confident misassignment: given
+a fixed list of names the model picks from the list instead of reading the
+sources, and pass 1 cannot see a customer who never paid by MoMo. Memory helps an
+agent only when the memory is complete.
 
 The target set in advance was above 90 exact, precision near 100, revenue error
-under GHS 20 per week. The baseline is nowhere near it, which is the point of
-having one.
+under GHS 20 per week. Neither stage is close, which is what the eval is for.
 
-The last column is the diagnostic. Services, amounts and methods sit between 92
-and 100 almost everywhere, while customer accuracy is the only field that
-degrades with difficulty, falling to 62.07 on `case-11-hard` and 53.57 on
-`case-12-hard`. Identity resolution is the bottleneck, and it is what the first
-agent iteration targets.
+The per-field breakdown is what drove iteration 1. On the baseline, services,
+amounts and methods sit between 92 and 100 almost everywhere, while customer
+accuracy is the only field that degrades with difficulty, falling to 53.57 on
+`case-12-hard`. Identity resolution is the bottleneck. Iteration 1 attacked it
+and failed, which narrows where iteration 2 should look.
 
-**Agent, `agent-v1`.** Implemented and unit tested, two passes, roster before
-extraction. **There is no complete measured agent run.** The attempt is preserved
-at `runs/agent-v1-FAILED-quota-2026-08-30/`. One case of twelve completed before
-the Gemini free tier cap of 20 requests per model stopped it, and a two pass
-agent needs 24 requests for twelve cases, so it could not fit in a day. One case
-is not a result and no accuracy claim is made from it. Later attempts on
-OpenRouter were blocked by sustained saturation of the free model pool. The
-measured evidence is in `DECISIONS.md`, entries D-004 and D-005.
+The 12-case aggregate in `runs/baseline/_score.json` reads 60.71 exact. **It is
+not usable.** That directory now mixes a `case-01` prediction from
+`inclusionai/ling-3.0-flash-fin:free` with 11 from `gemini-3.6-flash`, after a
+smoke test overwrote part of it. It is named here rather than quietly dropped.
 
 The scorer was validated before being trusted. A perfect run scores 100 across
 every metric, and a deliberately degraded run scores 51.77 exact, 66.07
@@ -205,26 +195,37 @@ training, which would not have been acceptable with real records.
 
 ## Known limitations
 
-No complete agent run exists, so this repository currently proves a measurement
-harness and a baseline, not an improvement. That is the largest gap.
+The one agent iteration that was measured made results worse and was removed, so
+this repository proves a measurement harness, a baseline, and one honest negative
+result. It does not demonstrate an improvement. That is the largest gap.
 
-Run-to-run variance has not been measured. Every number comes from a single run
-per configuration, and model output varies between runs, so small differences
-between cases should not be read as meaningful.
+The agent comparison covers 7 of 12 cases. Both hard cases are missing, and those
+are where the baseline scored worst, so the comparison is biased toward the
+easier end of the eval.
+
+Run-to-run variance is real and unquantified. Identical reruns of `case-01` on
+the same model produced 8 rows and then 9, so a difference of a point or two
+between any two numbers here is not evidence of anything.
 
 All measured numbers come from one model on one provider, `gemini-3.6-flash`.
 Another model would differ, and the baseline would need re-running before any
 comparison, since comparing across models measures the model rather than the
 design.
 
-Free tier capacity is a real constraint here, not a footnote. Gemini allows 20
-requests per model per day, which a two pass agent exceeds, and OpenRouter's free
-pool was saturated across every attempt. Both are documented with the observed
-error bodies in `docs/PROVIDERS.md`.
+Four separate free-tier provider constraints were hit during development, and
+they shaped what could be measured at all. Gemini caps free use at 20 requests
+per model per day, which a two pass agent over 12 cases exceeds. OpenRouter's
+free model pool was saturated across every attempt. One reasoning model ignored
+`reasoning_effort`. Transient 503s cost further runs. See `docs/PROVIDERS.md`.
 
 The confirmation queue is a design, not code, and human minutes per 100 rows has
 not been measured.
 
-Baseline precision of 68.61 means roughly three in ten predicted rows are
-invented or wrong. That is far from acceptable for something a shop owner would
-trust.
+The trajectory files are empty. The run script truncates the file at start and
+only appends on a successful case, so `_trajectories.jsonl` is 0 bytes in every
+run directory and deliverable 4 evidence was not captured. The code that builds
+trajectories is present and tested. The writing path is what failed.
+
+Baseline precision of 73.71 on the measured subset means roughly one in four
+predicted rows is invented or wrong. That is far from acceptable for something a
+shop owner would trust.

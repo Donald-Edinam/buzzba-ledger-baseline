@@ -5,7 +5,7 @@
 ```bash
 nvm use              # Node 22
 npm ci               # exact lockfile install
-npm run check        # typecheck, lint, 39 tests
+npm run check        # typecheck, lint, 63 tests
 npm run gen:cases    # regenerate 12 cases from fixed seeds
 ```
 

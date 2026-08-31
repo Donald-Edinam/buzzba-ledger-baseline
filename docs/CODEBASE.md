@@ -10,7 +10,7 @@ cd buzzba-ledger-baseline
 
 nvm use              # Node 22, pinned in .nvmrc
 npm ci               # exact install from package-lock.json
-npm run check        # typecheck + lint + 39 tests, all should pass
+npm run check        # typecheck + lint + 63 tests, all should pass
 npm run gen:cases    # writes the 12 evaluation cases into ./cases
 ```
 
@@ -107,7 +107,7 @@ The commands you type.
 
 ### tests
 
-39 tests. Three of them matter more than the rest:
+63 tests. Three of them matter more than the rest:
 
 - `generate.test.ts` asserts the same seed produces identical output, which is the reproducibility claim.
 - `score.test.ts` asserts a wrong field costs the whole row and that invented rows hurt precision, which is the scoring claim.
