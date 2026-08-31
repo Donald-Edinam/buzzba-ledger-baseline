@@ -14,7 +14,7 @@ import { readFileSync, readdirSync, mkdirSync, writeFileSync, appendFileSync } f
 import { join } from 'node:path';
 import { CaseSchema } from '../src/domain/ledger.js';
 import type { LlmClient } from '../src/llm/client.js';
-import { createClient, describeProvider } from '../src/llm/factory.js';
+import { createClient, describeProvider, requestBudgetWarning } from '../src/llm/factory.js';
 import { agentRunner } from '../src/runners/agent.js';
 import { baselineRunner, type Runner } from '../src/runners/baseline.js';
 
@@ -54,6 +54,12 @@ const trajPath = join(outDir, '_trajectories.jsonl');
 writeFileSync(trajPath, '');
 
 const caseIds = readdirSync('cases').filter((id) => !only || id === only).sort();
+
+// Preflight. A run that cannot fit inside the provider's daily allowance should
+// say so before the first request, not seventeen minutes in.
+const budgetWarning = requestBudgetWarning(provider['provider'] ?? '', runner.name, caseIds.length);
+if (budgetWarning) console.error(budgetWarning);
+
 const summary: Record<string, unknown>[] = [];
 let inTok = 0;
 let outTok = 0;

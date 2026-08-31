@@ -59,6 +59,40 @@ export const PRESETS: Record<string, ProviderPreset> = {
   },
 };
 
+/**
+ * Requests each runner spends per case. Lives here beside the caps it is
+ * checked against, rather than on the Runner interface, which is fixed and
+ * shared with the scorer.
+ */
+export const CALLS_PER_CASE: Record<string, number> = { baseline: 1, 'agent-v1': 2 };
+
+/**
+ * Preflight: does this run fit inside the provider's measured daily allowance?
+ * Returns the warning text, or null when the run fits or the cap is unmeasured.
+ *
+ * Advisory only. A partial run is sometimes exactly what is wanted, so callers
+ * warn and proceed rather than blocking.
+ */
+export function requestBudgetWarning(
+  provider: string,
+  runnerName: string,
+  caseCount: number,
+): string | null {
+  const cap = PRESETS[provider]?.dailyRequestCap;
+  if (cap === null || cap === undefined) return null;
+
+  const perCase = CALLS_PER_CASE[runnerName] ?? 1;
+  const requests = caseCount * perCase;
+  if (requests <= cap) return null;
+
+  return (
+    `WARNING: this run needs ${requests} requests (${caseCount} cases x ${perCase} ` +
+    `per case), but ${provider} allows ${cap} per day on the free tier. Expect the ` +
+    `run to fail partway with QUOTA_EXHAUSTED. Use --only to run a subset, or ` +
+    `switch provider.`
+  );
+}
+
 const DEFAULT_ANTHROPIC_RETRIES = 4;
 const DEFAULT_COMPAT_RETRIES = 5;
 const DEFAULT_TIMEOUT_MS = 180_000;

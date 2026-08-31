@@ -1,7 +1,7 @@
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { AnthropicClient } from '@/llm/client.js';
 import { OpenAICompatClient } from '@/llm/openai-compat.js';
-import { createClient, describeProvider, PRESETS } from '@/llm/factory.js';
+import { createClient, describeProvider, requestBudgetWarning, PRESETS } from '@/llm/factory.js';
 
 // Every case passes an env object explicitly; process.env is never touched, so
 // the suite behaves the same on a machine that has real keys exported.
@@ -124,5 +124,55 @@ describe('LLM_TIMEOUT_MS', () => {
     expect(() => createClient({ ANTHROPIC_API_KEY: 'k', LLM_TIMEOUT_MS: 'soon' })).toThrow(
       /LLM_TIMEOUT_MS/,
     );
+  });
+});
+
+describe('requestBudgetWarning', () => {
+  it('warns when a two-pass agent run exceeds gemini\'s measured 20/day', () => {
+    // The exact case that burned 17 minutes on 2026-08-30: 12 cases x 2 = 24 > 20.
+    const w = requestBudgetWarning('gemini', 'agent-v1', 12);
+    expect(w).toContain('24 requests');
+    expect(w).toContain('20 per day');
+    expect(w).toContain('gemini');
+  });
+
+  it('stays quiet when the run fits', () => {
+    // Baseline is one call per case: 12 <= 20.
+    expect(requestBudgetWarning('gemini', 'baseline', 12)).toBeNull();
+  });
+
+  it('warns on openrouter past 50/day', () => {
+    expect(requestBudgetWarning('openrouter', 'agent-v1', 26)).toContain('52 requests');
+    expect(requestBudgetWarning('openrouter', 'agent-v1', 25)).toBeNull();
+  });
+
+  it('stays quiet where no cap has been measured, rather than guessing one', () => {
+    expect(requestBudgetWarning('anthropic', 'agent-v1', 1000)).toBeNull();
+    expect(requestBudgetWarning('groq', 'agent-v1', 1000)).toBeNull();
+    expect(requestBudgetWarning('ollama', 'agent-v1', 1000)).toBeNull();
+  });
+
+  it('assumes one call per case for an unknown runner', () => {
+    expect(requestBudgetWarning('gemini', 'agent-v9', 21)).toContain('21 requests');
+    expect(requestBudgetWarning('gemini', 'agent-v9', 20)).toBeNull();
+  });
+
+  it('ignores an unknown provider', () => {
+    expect(requestBudgetWarning('mistral', 'agent-v1', 1000)).toBeNull();
+  });
+});
+
+describe('preset caps', () => {
+  it('records the measured caps and leaves unmeasured ones null', () => {
+    // null means UNMEASURED, not unlimited. Populated only from an observed 429.
+    expect(PRESETS['gemini']?.dailyRequestCap).toBe(20);
+    expect(PRESETS['openrouter']?.dailyRequestCap).toBe(50);
+    expect(PRESETS['anthropic']?.dailyRequestCap).toBeNull();
+    expect(PRESETS['groq']?.dailyRequestCap).toBeNull();
+  });
+
+  it('pins the verified openrouter model id', () => {
+    // Verified against openrouter.ai/api/v1/models on 2026-08-30.
+    expect(PRESETS['openrouter']?.defaultModel).toBe('google/gemma-4-31b-it:free');
   });
 });

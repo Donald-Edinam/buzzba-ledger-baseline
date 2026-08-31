@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-07-06",
+    "customer": "Ato Quaye",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Fiifi",
+    "services": [
+      "wash",
+      "kids_cut"
+    ],
+    "amount": 30,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-06",
     "customer": "Kojo",
     "services": [
       "haircut",
@@ -10,26 +29,8 @@
     "method": "unpaid"
   },
   {
-    "date": "2026-07-06",
-    "customer": "Ato Quaye",
-    "services": [
-      "haircut"
-    ],
-    "amount": 30,
-    "method": "momo"
-  },
-  {
     "date": "2026-07-07",
-    "customer": "Sister Abena Sarpong",
-    "services": [
-      "wash"
-    ],
-    "amount": 10,
-    "method": "momo"
-  },
-  {
-    "date": "2026-07-07",
-    "customer": "Nana Owusu",
+    "customer": "A Sarpong",
     "services": [
       "wash"
     ],
@@ -47,12 +48,12 @@
   },
   {
     "date": "2026-07-07",
-    "customer": "Yaw",
+    "customer": "Nana Owusu",
     "services": [
-      "haircut"
+      "wash"
     ],
-    "amount": 30,
-    "method": "cash"
+    "amount": 10,
+    "method": "momo"
   },
   {
     "date": "2026-07-07",
@@ -62,5 +63,23 @@
     ],
     "amount": 15,
     "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "sister Abena",
+    "services": [
+      "wash"
+    ],
+    "amount": 10,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Yaw",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
   }
 ]

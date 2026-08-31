@@ -2,31 +2,31 @@
   "aggregate": {
     "cases": 12,
     "exactRowAccuracy": 60.71,
-    "precision": 69.67,
-    "f1": 64.74,
-    "revenueErrorGhs": 1290,
+    "precision": 68.61,
+    "f1": 64.22,
+    "revenueErrorGhs": 1270,
     "totalGoldRows": 341
   },
   "cases": [
     {
       "caseId": "case-01",
       "goldRows": 8,
-      "predictedRows": 7,
+      "predictedRows": 9,
       "exactRowAccuracy": 50,
-      "precision": 57.14,
+      "precision": 44.44,
       "recall": 50,
-      "f1": 53.33,
+      "f1": 47.06,
       "goldTotal": 180,
-      "predictedTotal": 150,
-      "revenueErrorGhs": 30,
+      "predictedTotal": 190,
+      "revenueErrorGhs": 10,
       "fieldAccuracy": {
         "date": 100,
-        "customer": 66.67,
+        "customer": 57.14,
         "services": 100,
         "amount": 100,
-        "method": 100
+        "method": 85.71
       },
-      "hallucinatedRows": 3,
+      "hallucinatedRows": 5,
       "missedRows": 4
     },
     {

@@ -1,132 +1,22 @@
 {
   "runner": "baseline",
-  "provider": "gemini",
-  "model": "gemini-3.6-flash",
-  "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+  "provider": "openrouter",
+  "model": "inclusionai/ling-3.0-flash-fin:free",
+  "baseUrl": "https://openrouter.ai/api/v1",
   "reasoningEffort": "low",
-  "wallMs": 200992,
-  "inputTokens": 32186,
-  "outputTokens": 10832,
+  "wallMs": 55824,
+  "inputTokens": 1025,
+  "outputTokens": 6986,
   "cases": [
     {
       "caseId": "case-01",
-      "rows": 7,
+      "rows": 9,
       "parsedOk": true,
       "parseReason": null,
       "llmCalls": 1,
-      "inputTokens": 987,
-      "outputTokens": 262,
-      "ms": 17764
-    },
-    {
-      "caseId": "case-02",
-      "rows": 13,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 1574,
-      "outputTokens": 450,
-      "ms": 14455
-    },
-    {
-      "caseId": "case-03",
-      "rows": 17,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 1634,
-      "outputTokens": 583,
-      "ms": 25805
-    },
-    {
-      "caseId": "case-04",
-      "rows": 13,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 1846,
-      "outputTokens": 463,
-      "ms": 10048
-    },
-    {
-      "caseId": "case-05",
-      "rows": 15,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 2102,
-      "outputTokens": 530,
-      "ms": 15586
-    },
-    {
-      "caseId": "case-06",
-      "rows": 19,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 1814,
-      "outputTokens": 671,
-      "ms": 16037
-    },
-    {
-      "caseId": "case-07",
-      "rows": 26,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 3075,
-      "outputTokens": 923,
-      "ms": 16076
-    },
-    {
-      "caseId": "case-08",
-      "rows": 28,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 2895,
-      "outputTokens": 981,
-      "ms": 32157
-    },
-    {
-      "caseId": "case-09",
-      "rows": 29,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 3208,
-      "outputTokens": 1018,
-      "ms": 26939
-    },
-    {
-      "caseId": "case-10",
-      "rows": 33,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 3292,
-      "outputTokens": 1245,
-      "ms": 6045
-    },
-    {
-      "caseId": "case-11-hard",
-      "rows": 35,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 3766,
-      "outputTokens": 1332,
-      "ms": 9095
-    },
-    {
-      "caseId": "case-12-hard",
-      "rows": 63,
-      "parsedOk": true,
-      "parseReason": null,
-      "llmCalls": 1,
-      "inputTokens": 5993,
-      "outputTokens": 2374,
-      "ms": 10962
+      "inputTokens": 1025,
+      "outputTokens": 6986,
+      "ms": 55819
     }
   ]
 }

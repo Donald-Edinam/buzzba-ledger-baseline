@@ -38,17 +38,26 @@ function quotaViolations(body: string): QuotaViolation[] {
 }
 
 /**
+ * A 429 that is the shared free-model pool being momentarily busy, not this
+ * account being out of budget. OpenRouter says so in words and asks you to
+ * retry, so this is the one case where a 429 on a quota-burning provider is
+ * still worth a backoff. Observed 2026-08-30:
+ *   "google/gemma-4-31b-it:free is temporarily rate-limited upstream.
+ *    Please retry shortly, or add your own key to accumulate your rate limits"
+ */
+const TRANSIENT_UPSTREAM = /temporarily rate-limited upstream|please retry shortly/i;
+
+/**
  * Returns an explanation when a 429 must NOT be retried, or null when it is a
- * per-minute throttle worth waiting out.
+ * throttle worth waiting out.
+ *
+ * Two distinct things arrive as 429 and must not be conflated: an allowance
+ * that resets on a clock (terminal within a run) and a queue that is busy right
+ * now (retryable). Getting this backwards costs either seventeen wasted minutes
+ * or a run that dies on a blip.
  */
 function terminalQuota(body: string, provider?: string): string | null {
-  if (provider !== undefined && OpenAICompatClient.burnsQuotaOnRejection(provider)) {
-    return (
-      `${provider} counts rejected requests against its daily cap, so retrying ` +
-      `spends budget it cannot recover. Body: ${body.slice(0, 200)}`
-    );
-  }
-
+  // A daily quotaId is terminal on any provider: the clock, not the queue.
   for (const v of quotaViolations(body)) {
     if (typeof v.quotaId === 'string' && v.quotaId.includes('PerDay')) {
       const value = v.quotaValue !== undefined ? `, quotaValue=${v.quotaValue}` : '';
@@ -56,6 +65,17 @@ function terminalQuota(body: string, provider?: string): string | null {
       return `daily quota reached (quotaId=${v.quotaId}${value}${metric}). Retrying cannot succeed today.`;
     }
   }
+
+  if (provider !== undefined && OpenAICompatClient.burnsQuotaOnRejection(provider)) {
+    // Rejected requests cost daily budget here, so anything NOT explicitly
+    // transient is treated as terminal rather than retried on spec.
+    if (TRANSIENT_UPSTREAM.test(body)) return null;
+    return (
+      `${provider} counts rejected requests against its daily cap, so retrying ` +
+      `spends budget it cannot recover. Body: ${body.slice(0, 200)}`
+    );
+  }
+
   return null;
 }
 
