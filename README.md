@@ -167,6 +167,27 @@ Read `docs/PROVIDERS.md` before a full run. It carries the measured daily caps,
 which are low enough to matter, and the reasoning token trap that returns empty
 output on a successful HTTP 200.
 
+## Agent use
+
+This project was built with a coding agent, and the rules require that to be
+disclosed. **Claude Code**, Anthropic's CLI agent running `claude-opus-5`, wrote
+the multi-provider LLM support, the thinking-token hardening, the `agent-v1`
+runner, the provider presets and quota guard, and most of the documentation. The
+work that predates those sessions, meaning the evaluation harness, the scorer and
+the baseline runner in commit `8b2d43b`, is not attributable from inside this
+repository, and no commit carries a tool trailer that would settle it.
+
+**The automated trajectory capture did not work.** `scripts/run.ts` truncates
+`_trajectories.jsonl` at the start of every run and only appends for a case that
+completed, so all three run directories hold a 0 byte file and deliverable 4 was
+not captured as intended. `runs/*/_run.json` retains the per-case record instead.
+
+The full disclosure is in [docs/agent-evidence/](./docs/agent-evidence/): the
+tools and models used, the instructions the agent was given, the milestone
+prompts reconstructed from the repository, and an honest account of the
+trajectory failure. Two details in it are marked for the author to complete
+rather than guessed at.
+
 ## What existed before this hackathon
 
 The problem comes from my own work. I handle records for a barbershop in Teshie,
