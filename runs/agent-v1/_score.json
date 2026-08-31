@@ -1,0 +1,222 @@
+{
+  "aggregate": {
+    "cases": 10,
+    "exactRowAccuracy": 39.35,
+    "precision": 44.74,
+    "f1": 41.78,
+    "revenueErrorGhs": 5740,
+    "totalGoldRows": 319
+  },
+  "cases": [
+    {
+      "caseId": "case-03",
+      "goldRows": 17,
+      "predictedRows": 16,
+      "exactRowAccuracy": 52.94,
+      "precision": 56.25,
+      "recall": 52.94,
+      "f1": 54.54,
+      "goldTotal": 465,
+      "predictedTotal": 450,
+      "revenueErrorGhs": 15,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 75,
+        "services": 91.67,
+        "amount": 91.67,
+        "method": 100
+      },
+      "hallucinatedRows": 7,
+      "missedRows": 8
+    },
+    {
+      "caseId": "case-04",
+      "goldRows": 17,
+      "predictedRows": 13,
+      "exactRowAccuracy": 58.82,
+      "precision": 76.92,
+      "recall": 58.82,
+      "f1": 66.66,
+      "goldTotal": 550,
+      "predictedTotal": 440,
+      "revenueErrorGhs": 110,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 83.33,
+        "services": 91.67,
+        "amount": 91.67,
+        "method": 91.67
+      },
+      "hallucinatedRows": 3,
+      "missedRows": 7
+    },
+    {
+      "caseId": "case-05",
+      "goldRows": 20,
+      "predictedRows": 15,
+      "exactRowAccuracy": 25,
+      "precision": 33.33,
+      "recall": 25,
+      "f1": 28.57,
+      "goldTotal": 520,
+      "predictedTotal": 410,
+      "revenueErrorGhs": 110,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 55.56,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 10,
+      "missedRows": 15
+    },
+    {
+      "caseId": "case-06",
+      "goldRows": 22,
+      "predictedRows": 19,
+      "exactRowAccuracy": 54.55,
+      "precision": 63.16,
+      "recall": 54.55,
+      "f1": 58.54,
+      "goldTotal": 605,
+      "predictedTotal": 485,
+      "revenueErrorGhs": 120,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 66.67,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 7,
+      "missedRows": 10
+    },
+    {
+      "caseId": "case-07",
+      "goldRows": 30,
+      "predictedRows": 26,
+      "exactRowAccuracy": 80,
+      "precision": 92.31,
+      "recall": 80,
+      "f1": 85.72,
+      "goldTotal": 1050,
+      "predictedTotal": 940,
+      "revenueErrorGhs": 110,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 96,
+        "services": 100,
+        "amount": 100,
+        "method": 96
+      },
+      "hallucinatedRows": 2,
+      "missedRows": 6
+    },
+    {
+      "caseId": "case-08",
+      "goldRows": 28,
+      "predictedRows": 28,
+      "exactRowAccuracy": 67.86,
+      "precision": 67.86,
+      "recall": 67.86,
+      "f1": 67.86,
+      "goldTotal": 905,
+      "predictedTotal": 905,
+      "revenueErrorGhs": 0,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 95,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 9,
+      "missedRows": 9
+    },
+    {
+      "caseId": "case-09",
+      "goldRows": 36,
+      "predictedRows": 0,
+      "exactRowAccuracy": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0,
+      "goldTotal": 1320,
+      "predictedTotal": 0,
+      "revenueErrorGhs": 1320,
+      "fieldAccuracy": {
+        "date": 0,
+        "customer": 0,
+        "services": 0,
+        "amount": 0,
+        "method": 0
+      },
+      "hallucinatedRows": 0,
+      "missedRows": 36
+    },
+    {
+      "caseId": "case-10",
+      "goldRows": 35,
+      "predictedRows": 33,
+      "exactRowAccuracy": 54.29,
+      "precision": 57.58,
+      "recall": 54.29,
+      "f1": 55.89,
+      "goldTotal": 1335,
+      "predictedTotal": 1275,
+      "revenueErrorGhs": 60,
+      "fieldAccuracy": {
+        "date": 100,
+        "customer": 73.08,
+        "services": 100,
+        "amount": 100,
+        "method": 100
+      },
+      "hallucinatedRows": 14,
+      "missedRows": 16
+    },
+    {
+      "caseId": "case-11-hard",
+      "goldRows": 44,
+      "predictedRows": 0,
+      "exactRowAccuracy": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0,
+      "goldTotal": 1505,
+      "predictedTotal": 0,
+      "revenueErrorGhs": 1505,
+      "fieldAccuracy": {
+        "date": 0,
+        "customer": 0,
+        "services": 0,
+        "amount": 0,
+        "method": 0
+      },
+      "hallucinatedRows": 0,
+      "missedRows": 44
+    },
+    {
+      "caseId": "case-12-hard",
+      "goldRows": 70,
+      "predictedRows": 0,
+      "exactRowAccuracy": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0,
+      "goldTotal": 2390,
+      "predictedTotal": 0,
+      "revenueErrorGhs": 2390,
+      "fieldAccuracy": {
+        "date": 0,
+        "customer": 0,
+        "services": 0,
+        "amount": 0,
+        "method": 0
+      },
+      "hallucinatedRows": 0,
+      "missedRows": 70
+    }
+  ]
+}

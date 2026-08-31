@@ -1,0 +1,18 @@
+{
+  "runner": "agent-v1",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+  "reasoningEffort": "low",
+  "wallMs": 826,
+  "inputTokens": 0,
+  "outputTokens": 0,
+  "cases": [
+    {
+      "caseId": "case-12-hard",
+      "rows": 0,
+      "parsedOk": false,
+      "parseReason": "QUOTA_EXHAUSTED: daily quota reached (quotaId=GenerateRequestsPerDayPerProjectPerModel-FreeTier, quotaValue=20, quotaMetric=generativelanguage.googleapis.com/generate_content_free_tier_requests). Retrying cannot succeed today."
+    }
+  ]
+}

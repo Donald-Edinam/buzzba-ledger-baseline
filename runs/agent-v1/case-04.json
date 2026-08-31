@@ -1,0 +1,125 @@
+[
+  {
+    "date": "2026-07-06",
+    "customer": "Musah",
+    "services": [
+      "beard_trim"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-06",
+    "customer": "Nana Owusu",
+    "services": [
+      "kids_cut",
+      "lineup"
+    ],
+    "amount": 35,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kwame Mensah",
+    "services": [
+      "lineup",
+      "beard_trim"
+    ],
+    "amount": 30,
+    "method": "unpaid"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Kelvin",
+    "services": [
+      "haircut",
+      "kids_cut"
+    ],
+    "amount": 50,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "Selorm",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-07",
+    "customer": "F. Tetteh",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Godwin",
+    "services": [
+      "lineup"
+    ],
+    "amount": 15,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Abena",
+    "services": [
+      "haircut"
+    ],
+    "amount": 30,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Kwame Mensah",
+    "services": [
+      "haircut",
+      "beard_trim"
+    ],
+    "amount": 45,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-08",
+    "customer": "Nana Owusu",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Kofi Adjei",
+    "services": [
+      "haircut",
+      "wash"
+    ],
+    "amount": 40,
+    "method": "momo"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Emmanuel",
+    "services": [
+      "dye"
+    ],
+    "amount": 50,
+    "method": "cash"
+  },
+  {
+    "date": "2026-07-09",
+    "customer": "Esi Amoah",
+    "services": [
+      "kids_cut"
+    ],
+    "amount": 20,
+    "method": "momo"
+  }
+]
